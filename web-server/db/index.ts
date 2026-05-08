@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
-// const DATABASE_CONNECTION_STRING = 'mongodb://127.0.0.1:27017/WhatsappClone'
-const DATABASE_CONNECTION_STRING =
-  "mongodb+srv://admin:mongodb123@whclonecluster-cq1it.mongodb.net/test?retryWrites=true&w=majority";
-
+const DATABASE_CONNECTION_STRING = 'mongodb://127.0.0.1:27017/WhatsappClone'
+// const DATABASE_CONNECTION_STRING =
+//    "mongodb+srv://peckooo460_db_user:bMWAaXoMLhG69deu@whatsappclone.lu4tthc.mongodb.net/?retryWrites=true&w=majority&appName=WhatsAppClone"
 mongoose
   .connect(DATABASE_CONNECTION_STRING, {
     useNewUrlParser: true,
