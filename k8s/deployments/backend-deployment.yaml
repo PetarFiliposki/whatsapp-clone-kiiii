@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: whatsapp-clone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: petar4e/whatsapp-backend:latest  
+        ports:
+        - containerPort: 3000
+        env:
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: MONGODB_URI
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: BACKEND_PORT

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: whatsapp-clone
+data:
+  BACKEND_PORT: "3000"
+  FRONTEND_PORT: "3001"
+  REACT_APP_API_URL: "http://backend-service:3000"
